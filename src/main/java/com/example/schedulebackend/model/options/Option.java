@@ -25,14 +25,4 @@ public class Option {
         this.data = data;
         this.nullable = nullable;
     }
-
-    @Override
-    public String toString() {
-        return "Option{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", data='" + data + '\'' +
-                ", nullable=" + nullable +
-                '}';
-    }
 }
