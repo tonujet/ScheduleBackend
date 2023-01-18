@@ -7,22 +7,26 @@ public class Option {
     @JsonProperty
     String name;
     @JsonProperty
-    String type;
+    String inputType;
     @JsonProperty
-    String data;
+    String dataSource;
+    @JsonProperty
+    String validatorName;
     @JsonProperty
     Boolean nullable;
 
-    public Option(String name, String type, Boolean nullable) {
+    public Option(String name, String inputType, String dataSource, String validatorName, Boolean nullable) {
         this.name = name;
-        this.type = type;
+        this.inputType = inputType;
+        this.dataSource = dataSource;
+        this.validatorName = validatorName;
         this.nullable = nullable;
     }
 
-    public Option(String name, String type, String data, Boolean nullable) {
+    public Option(String name, String inputType, String validatorName, Boolean nullable) {
         this.name = name;
-        this.type = type;
-        this.data = data;
+        this.inputType = inputType;
+        this.validatorName = validatorName;
         this.nullable = nullable;
     }
 }
