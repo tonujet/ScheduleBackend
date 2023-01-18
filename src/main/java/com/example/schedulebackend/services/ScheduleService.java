@@ -81,7 +81,7 @@ public class ScheduleService {
     }
 
 
-    public HashMap<String, List<ScheduleDTO>> getFullSchedule(long id) {
+    public List<ScheduleDTO> getFullSchedule(long id) {
         List<String> days = Arrays.stream(DayOfWeek.values()).filter(x -> x != DayOfWeek.SUNDAY)
                 .map(Enum::toString).toList();
         System.out.println("days = " + days);
@@ -94,9 +94,9 @@ public class ScheduleService {
                 .map(day -> setScheduleDay(day, schedules))
                 .toList();
 
-        HashMap<String, List<ScheduleDTO>> fullSchedule = new LinkedHashMap<>();
+        List<ScheduleDTO> fullSchedule = new ArrayList<>();
         for (int i = 0; i < days.size(); i++) {
-            fullSchedule.put(days.get(i).toLowerCase(), scheduleDays.get(i));
+            fullSchedule.addAll(scheduleDays.get(i));
         }
         return fullSchedule;
 

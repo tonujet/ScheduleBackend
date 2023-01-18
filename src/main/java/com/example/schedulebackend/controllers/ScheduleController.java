@@ -49,7 +49,7 @@ public class ScheduleController{
     }
 
     @GetMapping("/full/{id}")
-    public ResponseEntity<HashMap<String, List<ScheduleDTO>>> getFullSchedule(@PathVariable long id) {
+    public ResponseEntity<List<ScheduleDTO>> getFullSchedule(@PathVariable long id) {
         return ResponseEntity.ok(scheduleService.getFullSchedule(id));
     }
 }
