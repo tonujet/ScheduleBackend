@@ -90,14 +90,12 @@ public class ScheduleService {
                 .filter(schedule -> schedule.getTime() != null)
                 .sorted(comparing(Schedule::getTime))
                 .toList();
-        List<List<ScheduleDTO>> scheduleDays = days.stream()
-                .map(day -> setScheduleDay(day, schedules))
-                .toList();
+        System.out.println(schedules);
 
-        List<ScheduleDTO> fullSchedule = new ArrayList<>();
-        for (int i = 0; i < days.size(); i++) {
-            fullSchedule.addAll(scheduleDays.get(i));
-        }
+        List<ScheduleDTO> fullSchedule = schedules.stream()
+                .map(schedule -> ScheduleDTO.toDTO(schedule, TeacherDTO.toSimpleDTO(schedule.getTeacher()), null, null)).toList();
+
+        System.out.println(fullSchedule);
         return fullSchedule;
 
     }
