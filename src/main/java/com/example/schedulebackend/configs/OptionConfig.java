@@ -12,11 +12,11 @@ public class OptionConfig {
     public List<Option> scheduleOptions() {
         return List.of(
                 new Option("name", "text", "textOnly", false),
-                new Option("teacher", "data", "teachers", null, true),
-                new Option("discipline", "data", "disciplines", null, true),
-                new Option("dayOfWeek", "selectWeekDays", null, true),
                 new Option("time", "data", "startsTime", null, true),
                 new Option("classroom", "text", "textNumberDashValidator", true),
+                new Option("dayOfWeek", "selectWeekDays", null, true),
+                new Option("teacher", "data", "teachers", null, true),
+                new Option("discipline", "data", "disciplines", null, true),
                 new Option("group", "data", "groups", null, true)
         );
     }
@@ -32,8 +32,9 @@ public class OptionConfig {
     public List<Option> groupOptions() {
         return List.of(
                 new Option("name", "text", "textOnly", false),
-                new Option("department", "data", "departments",null, true),
-                new Option("course", "text","courseValidator", true)
+                new Option("course", "text", "courseValidator", true),
+                new Option("department", "data", "departments", null, true)
+
         );
     }
 
@@ -41,46 +42,46 @@ public class OptionConfig {
     public List<Option> studentOptions() {
         return List.of(
                 new Option("name", "text", "textOnly", false),
-                new Option("group", "data", "groups",null, true),
-                new Option("email", "email","emailValidator", false),
-                new Option("phone", "phone","phoneValidator", false)
+                new Option("email", "email", "emailValidator", false),
+                new Option("phone", "phone", "phoneValidator", false),
+                new Option("group", "data", "groups", null, true)
         );
     }
 
     @Bean("V1teacherOptions")
     public List<Option> teacherOptions() {
         return List.of(
-                new Option("name", "text","textOnly", false),
-                new Option("surname", "text","textOnly", false),
-                new Option("email", "email","emailValidator", false),
-                new Option("phone", "phone","phoneValidator", false)
+                new Option("name", "text", "textOnly", false),
+                new Option("surname", "text", "textOnly", false),
+                new Option("email", "email", "emailValidator", false),
+                new Option("phone", "phone", "phoneValidator", false)
         );
     }
 
     @Bean("V1departmentOptions")
     public List<Option> departmentOptions() {
         return List.of(
-                new Option("name", "text","textOnly",  false),
-                new Option("shortName", "text","textNumberValidator", false),
-                new Option("faculty", "data", "faculties",null, true)
+                new Option("name", "text", "textOnly", false),
+                new Option("shortName", "text", "textNumberValidator", false),
+                new Option("faculty", "data", "faculties", null, true)
         );
     }
 
     @Bean("V1newsOptions")
     public List<Option> newsOptions() {
         return List.of(
-                new Option("title", "text",null, false),
-                new Option("description", "textarea",null, false),
-                new Option("text", "textarea",null, false),
-                new Option("dateCreated", "date","dateValidator", true)
+                new Option("title", "text", null, false),
+                new Option("description", "textarea", null, false),
+                new Option("text", "textarea", null, false),
+                new Option("dateCreated", "date", "dateValidator", true)
         );
     }
 
     @Bean("V1facultyOptions")
     public List<Option> facultyOptions() {
         return List.of(
-                new Option("name", "text","textOnly", false),
-                new Option("shortName", "text","textOnly", false)
+                new Option("name", "text", "textOnly", false),
+                new Option("shortName", "text", "textOnly", false)
         );
     }
 }

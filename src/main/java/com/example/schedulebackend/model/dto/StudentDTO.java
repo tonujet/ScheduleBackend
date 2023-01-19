@@ -15,12 +15,12 @@ import lombok.Setter;
 public class StudentDTO {
     private long id;
 
-    @JsonProperty("group")
-    private GroupDTO groupDTO;
-
     @NotBlank(message = "Student`s name is null")
     @Size(min = 2, max = 100, message = "Student name should be between 2 and 100 characters")
     private String name;
+
+    @JsonProperty("group")
+    private GroupDTO groupDTO;
 
     @NotBlank(message = "Student`s email is null")
     @Email(message = "Student`s email is incorrect")
